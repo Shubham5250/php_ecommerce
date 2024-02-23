@@ -34,12 +34,18 @@
                                 <label for="inputEmail" class="form-label">Email</label>
                                 <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Enter your email">
                             </div>
-                            
+                            <div class="mb-3">
+                                <label for="inputPhone" class="form-label">Phone</label>
+                                <input type="text" name="phone" class="form-control" placeholder="Enter your phone number">
+                            </div>
                             <div class="mb-3">
                                 <label for="inputPassword" class="form-label">Password</label>
                                 <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Enter password">
                             </div>
-                            
+                            <div class="mb-3">
+                                <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" name="cpassword" class="form-control" id="inputConfirmPassword" placeholder="Confirm password">
+                            </div>
                             <button type="submit" name="register_btn" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
