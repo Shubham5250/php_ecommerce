@@ -47,6 +47,29 @@ else if(isset($_POST['login_btn'])) {
 
     $login_query_run = mysqli_query($conn, $login_query);
 
+    if(mysqli_num_rows($login_query_run) > 0) {
+        $_SESSION['auth'] = true;
+
+        $userdata = mysqli_fetch_array($login_query_run);
+
+        $_SESSION['auth_user'] = [
+            'user_id' => $userdata['id'],
+            'name' => $userdata['name'],
+            'email' => $userdata['email']
+        ];
+
+        $_SESSION['role_as'] = $userdata['role_as'];
+
+        if($userdata['role_as'] == 1) {
+            redirect('Welcome to admin dashboard.', '../admin/index.php');
+        }
+        else {
+            redirect('Logged in successfully.', '../index.php');
+        }
+    } 
+    else {
+        redirect('Invalid credentials.', '../login.php');
+    }
 
 }
 
